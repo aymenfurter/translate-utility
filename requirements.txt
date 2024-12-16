@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic-settings
+pydantic
+azure-ai-documentintelligence
+azure-core
+azure-identity
+openai
+jinja2
+pytest
+pytest-asyncio
+pytest-cov
+aiohttp
+python-dotenv
+tenacity
+backoff
