@@ -1,26 +1,42 @@
+<div align="center">
+
 # Document Translation & Editing App
 
-This application allows users to:
+<p align="center">
+  <img src="https://img.shields.io/github/last-commit/aymenfurter/translate-utility" alt="Last Commit" />
+  <img src="https://img.shields.io/github/license/aymenfurter/translate-utility" alt="License" />
+</p>
 
-- Upload Markdown, Word, or PDF documents
-- Convert to Markdown
-- View chapters side-by-side
-- Translate text using Azure OpenAI with context from adjacent chapters
-- Edit the translated Markdown in a WYSIWYG editor
-- Export the final translated Markdown
+A document translation tool that leverages Azure OpenAI Service and Azure Document Intelligence.
 
-## Features
+<img src="https://raw.githubusercontent.com/aymenfurter/translate-utility/main/screen2.png" width="800" alt="Main Interface" />
 
-- **Single container**: The Docker image contains both the Python backend (FastAPI + Uvicorn) and the compiled frontend (React + Fluent UI + Vite).
-- **Asynchronous translation**: Uses Azure OpenAI to translate text. Polling is used to track translation progress.
-- **WYSIWYG Editing**: Refine translations before exporting.
-- **Works locally or containerized**.
+</div>
 
-## Prerequisites
+## 🚀 Key Features
 
-- Docker & Docker Compose (if using compose)
-- Azure credentials for OpenAI and Document Intelligence
-- Pandoc installed inside the container (already handled by Dockerfile)
+- 📚 Upload text-based documents (Markdown, Word*, or PDF*)
+- 🔄 Automatic conversion to plain Markdown
+- 👀 Side-by-side chapter view
+- 🤖 Azure OpenAI powered translations with context awareness
+- ✏️ Editor for translation refinement
+- 💾 Export final translations
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/aymenfurter/translate-utility/main/screen1.png" width="800" alt="Translation Interface" />
+</div>
+
+> **Note:** This tool is optimized for text-based content only. Documents containing images, graphs, diagrams, or complex formatting will be converted to plain Markdown text. Images and rich media content are not preserved in the translation process.
+
+## ⚡ Technical Highlights
+
+- **All-in-One Container**: Single Docker image with Python backend (FastAPI + Uvicorn) and compiled frontend (React + Fluent UI + Vite)
+- **Smart Translation**: Asynchronous translation using Azure OpenAI with context from adjacent chapters
+
+## 🔧 Prerequisites
+
+- Docker
+- Azure OpenAI and Document Intelligence credentials
 
 ## Local Development
 
@@ -54,18 +70,3 @@ This application allows users to:
     ```
 
 3. Open `http://localhost:8000` in your browser. The frontend and backend are served from the same container.
-
-## Environment Variables
-
-Configure environment variables in `.env`:
-
-- `AZURE_OPENAI_ENDPOINT`, `AZURE_OPENAI_KEY`, `AZURE_OPENAI_MODEL`, `AZURE_OPENAI_API_VERSION`  
-- `AZURE_DOC_INTELLIGENCE_ENDPOINT`, `AZURE_DOC_INTELLIGENCE_KEY`
-- `ENV`, `TEMP_DIR`, `MAX_UPLOAD_SIZE`
-
-Example in `.env.example`.
-
-## Help & Support
-
-Visit `/help` in the app for instructions. For troubleshooting or contributing, check the GitHub repository issues page.
-
